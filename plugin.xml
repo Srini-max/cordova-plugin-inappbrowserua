@@ -29,13 +29,13 @@
     <repo>https://github.com/apache/cordova-plugin-inappbrowser</repo>
     <issue>https://github.com/apache/cordova-plugin-inappbrowser/issues</issue>
 
-    <engines>
-      <engine name="cordova" version=">=3.1.0" /><!-- Needs cordova/urlutil -->
+   <engines>
+      <engine name="cordova" version=">=5.1.1" /><!-- Needs cordova/urlutil -->
+      <engine name="cordova-ios" version=">=4.0.0" />
     </engines>
-<preference name="OverrideUserAgent" value="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36" />
+
     <!-- android -->
     <platform name="android">
-
         <js-module src="www/inappbrowser.js" name="inappbrowser">
             <clobbers target="cordova.InAppBrowser.open" />
             <clobbers target="window.open" />
@@ -45,9 +45,9 @@
                 <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
             </feature>
         </config-file>
-			<hook src="www/patchInAppBrowser.js" type="after_prepare" />
-		
-		<source-file src="src/android/InAppBrowser.java" target-dir="src/org/apache/cordova/inappbrowser" />
+		<preference name="OverrideUserAgent" value="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36" />
+		<preference name="AppendUserAgent" value="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36" />
+        <source-file src="src/android/InAppBrowser.java" target-dir="src/org/apache/cordova/inappbrowser" />
         <source-file src="src/android/InAppBrowserDialog.java" target-dir="src/org/apache/cordova/inappbrowser" />
         <source-file src="src/android/InAppChromeClient.java" target-dir="src/org/apache/cordova/inappbrowser" />
 
@@ -89,9 +89,9 @@
                 <param name="onload" value="true" />
             </feature>
         </config-file>
-			<hook src="www/patchInAppBrowser.js" type="after_prepare" />
-		
-		<header-file src="src/ios/CDVInAppBrowser.h" />
+		<preference name="OverrideUserAgent" value="Version/8.0.2 Safari/600.2.5" />
+		<preference name="AppendUserAgent" value="Version/8.0.2 Safari/600.2.5" />
+        <header-file src="src/ios/CDVInAppBrowser.h" />
 	    <source-file src="src/ios/CDVInAppBrowser.m" />
         <header-file src="src/ios/CDVInAppBrowserOptions.h" />
         <source-file src="src/ios/CDVInAppBrowserOptions.m" />
