@@ -7,11 +7,11 @@ var path = require("path");
 
 module.exports = function(context) {
 
-	var iosFile = path.resolve(context.opts.projectRoot + "/platforms/ios/Fareclock/Plugins/cordova-plugin-inappbrowser", "CDVUIInAppBrowser.m");
+	var iosFile = path.resolve(context.opts.projectRoot + "/platforms/ios/Fareclock/Plugins/cordova-plugin-inappbrowserua", "CDVUIInAppBrowser.m");
 
 	var filesToPatch = [
 		iosFile,
-		path.resolve(context.opts.projectRoot + "/platforms/android/app/src/main/java/org/apache/cordova/inappbrowser", "InAppBrowser.java")
+		path.resolve(context.opts.projectRoot + "/platforms/android/app/src/main/java/org/apache/cordova/inappbrowserua", "InAppBrowser.java")
 	];
 
 	replace({
