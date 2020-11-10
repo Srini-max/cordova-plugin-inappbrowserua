@@ -16,7 +16,7 @@ module.exports = function(context) {
 
 	replace({
 	    regex: "\"OverrideUserAgent\"",
-	    replacement: "\"InAppBrowserOverrideUserAgent\"",
+	    replacement: "\"OverrideUserAgent\"",
 	    paths: filesToPatch,
 	    recursive: false,
 	    silent: true,
